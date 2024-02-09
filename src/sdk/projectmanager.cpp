@@ -1009,13 +1009,13 @@ bool ProjectManager::BeginLoadingProject()
 {
     if (m_IsLoadingProject)
         return false;
-
+#if 0
     if (!Manager::Get()->GetPluginManager()->FindPluginByName(_T("Compiler")))
     {
         cbMessageBox(_("Deactivating the compiler plugin is most unwise.\n\nIf you intend to open a project, you have to re-activate the compiler plugin first."), _("Error"));
         return false;
     }
-
+#endif
     // disallow application shutdown while opening files
     s_CanShutdown = false;
     // flag project loading
