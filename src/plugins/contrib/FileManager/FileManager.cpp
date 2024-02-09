@@ -42,7 +42,7 @@ void FileManagerPlugin::OnAttach()
 {
     //Create a new instance of the FileExplorer and attach it to the Project Manager notebook
     m_fe=new FileExplorer(Manager::Get()->GetAppWindow());
-    Manager::Get()->GetProjectManager()->GetUI().GetNotebook()->AddPage(m_fe,_("Files"));
+    Manager::Get()->GetProjectManager()->GetUI().GetNotebook()->wxAuiNotebook::AddPage(m_fe,_("Files"));
 }
 
 void FileManagerPlugin::OnRelease(bool /*appShutDown*/)

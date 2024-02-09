@@ -35,7 +35,12 @@ class cbDragScrollCfg: public cbConfigurationPanel
         wxString GetBitmapBaseName() const;
         void OnApply();
         void OnCancel(){}
-        virtual void InitDialog(){ asm("int3");} /*trap*/
+        virtual void InitDialog()
+        {
+#if defined(LOGGING)
+            asm("int3");
+#endif
+        } /*trap*/
 
         // pointer to owner of the configuration diaglog needed to
         // complete the OnApply/OnCancel EndModal() logic

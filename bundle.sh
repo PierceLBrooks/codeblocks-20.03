@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PREFIX_DIR="/usr/local"
+PREFIX_DIR="/Users/pbrooks/Development/Personal/codeblocks-20.03/install"
 INSTALL_SHAREDIR="${PREFIX_DIR}/share/codeblocks"
 APPNAME="CodeBlocks"
 APPDIR="${APPNAME}.app"

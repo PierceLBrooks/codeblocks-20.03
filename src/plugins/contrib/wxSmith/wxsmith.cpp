@@ -180,7 +180,7 @@ void wxSmith::BuildBrowserParents()
 
             // Creating main splitting object
             m_Splitter = new wxsStoringSplitterWindow(Notebook);
-            Notebook->AddPage(m_Splitter,_("Resources"));
+            Notebook->wxAuiNotebook::AddPage(m_Splitter,_("Resources"));
 
             m_ResourceBrowserParent = new wxPanel(m_Splitter->GetSplitter(),-1,wxDefaultPosition,wxDefaultSize,0);
             m_PropertyBrowserParent = new wxPanel(m_Splitter->GetSplitter(),-1,wxDefaultPosition,wxDefaultSize,0);

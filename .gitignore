@@ -3,6 +3,7 @@
 *.lo
 *.la
 *.pc
+*.xml
 *.zip
 *.log
 *.install
@@ -18,4 +19,6 @@ stamp-*
 codeblocks
 cb_console_runner
 cb_share_config
+/build
+/install
 
