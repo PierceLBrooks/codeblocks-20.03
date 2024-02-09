@@ -2679,8 +2679,8 @@ bool MainFrame::OnDropFiles(wxCoord /*x*/, wxCoord /*y*/, const wxArrayString& f
     else
     {
         wxBusyCursor useless;
-        wxPaintEvent e;
-        ProcessEvent(e);
+        //wxPaintEvent e;
+        //ProcessEvent(e);
         for (unsigned int i = 0; i < files.GetCount(); ++i)
           success &= OpenGeneric(files[i]);
     }

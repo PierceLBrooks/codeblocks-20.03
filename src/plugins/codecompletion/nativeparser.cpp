@@ -1034,7 +1034,7 @@ void NativeParser::CreateClassBrowser()
     {
         // make this a tab in projectmanager notebook
         m_ClassBrowser = new ClassBrowser(Manager::Get()->GetProjectManager()->GetUI().GetNotebook(), this);
-        Manager::Get()->GetProjectManager()->GetUI().GetNotebook()->AddPage(m_ClassBrowser, _("Symbols"));
+        Manager::Get()->GetProjectManager()->GetUI().GetNotebook()->wxAuiNotebook::AddPage(m_ClassBrowser, _("Symbols"));
         m_ClassBrowser->UpdateSash();
     }
 

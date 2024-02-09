@@ -354,7 +354,7 @@ namespace ScriptBindings
                 func(&wxFileName::IsDir, "IsDir").
                 func(&wxFileName::MakeAbsolute, "MakeAbsolute").
                 func(&wxFileName::MakeRelativeTo, "MakeRelativeTo").
-                func(&wxFileName::Normalize, "Normalize").
+//                func(&wxFileName::Normalize, "Normalize").
                 func(&wxFileName::PrependDir, "PrependDir").
                 func(&wxFileName::RemoveDir, "RemoveDir").
                 func(&wxFileName::RemoveLastDir, "RemoveLastDir").

@@ -144,12 +144,12 @@ void NbStyleVC71::DrawTab(wxDC& dc, wxWindow* wnd,
         bitmap_offset = tab_x + 8;
 
         // draw bitmap
-        dc.DrawBitmap(page.bitmap,
+        dc.DrawBitmap(page.bitmap.GetBitmap(page.bitmap.GetDefaultSize()),
                       bitmap_offset,
-                      drawn_tab_yoff + (drawn_tab_height/2) - (page.bitmap.GetHeight()/2),
+                      drawn_tab_yoff + (drawn_tab_height/2) - (page.bitmap.GetDefaultSize().GetHeight()/2),
                       true);
 
-        text_offset = bitmap_offset + page.bitmap.GetWidth();
+        text_offset = bitmap_offset + page.bitmap.GetDefaultSize().GetWidth();
         text_offset += 3; // bitmap padding
     }
      else
@@ -187,13 +187,13 @@ void NbStyleVC71::DrawTab(wxDC& dc, wxWindow* wnd,
     if (close_button_state != wxAUI_BUTTON_STATE_HIDDEN)
     {
 #if wxCHECK_VERSION(3, 0, 0)
-        int close_button_width = m_activeCloseBmp.GetWidth();
-        wxBitmap bmp = m_disabledCloseBmp;
+        int close_button_width = m_activeCloseBmp.GetDefaultSize().GetWidth();
+        wxBitmap bmp = m_disabledCloseBmp.GetBitmap(m_disabledCloseBmp.GetDefaultSize());
 #else
         int close_button_width = m_active_close_bmp.GetWidth();
         wxBitmap bmp = m_disabled_close_bmp;
 #endif
-
+#if 0
         if ((close_button_state == wxAUI_BUTTON_STATE_HOVER) ||
                     (close_button_state == wxAUI_BUTTON_STATE_PRESSED))
 #if wxCHECK_VERSION(3, 0, 0)
@@ -201,7 +201,7 @@ void NbStyleVC71::DrawTab(wxDC& dc, wxWindow* wnd,
 #else
             bmp = m_active_close_bmp;
 #endif
-
+#endif
         wxRect rect(tab_x + tab_width - close_button_width - 3,
                     drawn_tab_yoff + (drawn_tab_height / 2) - (bmp.GetHeight() / 2),
                     close_button_width, tab_height);
@@ -338,12 +338,12 @@ void NbStyleFF2::DrawTab(wxDC& dc, wxWindow* wnd,
         bitmap_offset = tab_x + 8;
 
         // draw bitmap
-        dc.DrawBitmap(page.bitmap,
+        dc.DrawBitmap(page.bitmap.GetBitmap(page.bitmap.GetDefaultSize()),
                       bitmap_offset,
-                      drawn_tab_yoff + (drawn_tab_height/2) - (page.bitmap.GetHeight()/2),
+                      drawn_tab_yoff + (drawn_tab_height/2) - (page.bitmap.GetDefaultSize().GetHeight()/2),
                       true);
 
-        text_offset = bitmap_offset + page.bitmap.GetWidth();
+        text_offset = bitmap_offset + page.bitmap.GetDefaultSize().GetWidth();
         text_offset += 3; // bitmap padding
     }
      else
@@ -381,13 +381,13 @@ void NbStyleFF2::DrawTab(wxDC& dc, wxWindow* wnd,
     if (close_button_state != wxAUI_BUTTON_STATE_HIDDEN)
     {
 #if wxCHECK_VERSION(3, 0, 0)
-        int close_button_width = m_activeCloseBmp.GetWidth();
-        wxBitmap bmp = m_disabledCloseBmp;
+        int close_button_width = m_activeCloseBmp.GetDefaultSize().GetWidth();
+        wxBitmap bmp = m_disabledCloseBmp.GetBitmap(m_disabledCloseBmp.GetDefaultSize());
 #else
         int close_button_width = m_active_close_bmp.GetWidth();
         wxBitmap bmp = m_disabled_close_bmp;
 #endif
-
+#if 0
         if ((close_button_state == wxAUI_BUTTON_STATE_HOVER) ||
                     (close_button_state == wxAUI_BUTTON_STATE_PRESSED))
 #if wxCHECK_VERSION(3, 0, 0)
@@ -395,7 +395,7 @@ void NbStyleFF2::DrawTab(wxDC& dc, wxWindow* wnd,
 #else
             bmp = m_active_close_bmp;
 #endif
-
+#endif
         wxRect rect(tab_x + tab_width - close_button_width - 3,
                     drawn_tab_yoff + (drawn_tab_height / 2) - (bmp.GetHeight() / 2),
                     close_button_width, tab_height);

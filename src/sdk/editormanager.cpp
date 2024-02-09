@@ -534,7 +534,7 @@ void EditorManager::AddEditorBase(EditorBase* eb)
     {
         // use fullname as default, so tabs stay as small as possible
         wxFileName fn(eb->GetTitle());
-        m_pNotebook->AddPage(eb, fn.GetFullName(), true);
+        m_pNotebook->wxAuiNotebook::AddPage(eb, fn.GetFullName(), true);
     }
 }
 

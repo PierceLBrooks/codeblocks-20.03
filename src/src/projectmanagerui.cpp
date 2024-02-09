@@ -260,7 +260,7 @@ void ProjectManagerUI::InitPane()
     m_pImages = cbProjectTreeImages::MakeImageList(16, *m_pNotebook);
     m_pTree->SetImageList(m_pImages.get());
 
-    m_pNotebook->AddPage(m_pTree, _("Projects"));
+    m_pNotebook->wxAuiNotebook::AddPage(m_pTree, _("Projects"));
 }
 
 void ProjectManagerUI::RebuildTree()
